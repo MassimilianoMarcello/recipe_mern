@@ -1,10 +1,21 @@
+/* Stile per il componente Header */
+
 header {
-    color: white;
-    padding: 10px;
+    background: linear-gradient(135deg, #00b4db, #0083b0); /* Sfumato blu */
+    padding: 20px;
     text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombra sotto il header */
+    border-radius: 8px; /* Arrotonda gli angoli */
+    color: #fff;
 }
 
-h1 {
-    font-size: 2.5em;
+header h1 {
+    font-size: 2.5rem; /* Testo grande */
+    font-weight: 700;  /* Spesso */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Ombra per il testo */
     margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font pulito e moderno */
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Spaziatura tra le lettere */
 }
+

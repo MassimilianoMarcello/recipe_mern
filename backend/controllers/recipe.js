@@ -57,8 +57,8 @@ const recipeControllers = {
     deleteRecipe: async (req, res) => {
         const { id } = req.params;
         try {
-            const deleteRecipe = await Recipe.deleteOne({ _id: id });
-            if (!deletedRecipe) {
+            const deletedRecipe = await Recipe.deleteOne({ _id: id });
+            if (!deletedRecipe.deletedCount) { // deletedCount indica se è stato eliminato un documento
                 return res.status(404).json({ message: 'Recipe not found' });
             } else {
                 res.status(200).json({ message: 'Recipe deleted successfully' });
@@ -67,6 +67,7 @@ const recipeControllers = {
             res.status(500).json({ message: err.message });
         }
     }
+    
 };
 
 export default recipeControllers;
