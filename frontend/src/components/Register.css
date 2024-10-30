@@ -1,0 +1,70 @@
+/* Register.css */
+
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+}
+
+.register form {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.register form label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.register form input {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.register form input:focus {
+    border-color: #a0a0a0;
+    box-shadow: 0 0 8px rgba(160, 160, 160, 0.3);
+}
+
+.register .error {
+    font-size: 0.9rem;
+    color: #d9534f;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.register form button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register form button:hover {
+    background-color: #357ab7;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.register form button:focus {
+    outline: none;
+}

@@ -1,14 +1,10 @@
 import PropTypes from 'prop-types';
-import './Recipe.css'; // Rimuovi l'importazione di `DeleteRecipe`
+import './Recipe.css';
 
-const Recipe = ({ recipe, onDelete }) => {
+const Recipe = ({ recipe, onDelete, onUpdateRequest }) => {
     if (!recipe) {
-        return null; 
+        return null; // Ritorna null se il recipe è undefined
     }
-
-    const handleDelete = () => {
-        onDelete(recipe._id); // Chiama la funzione onDelete con l'id della ricetta
-    };
 
     return (
         <div className="recipe-card">
@@ -20,7 +16,8 @@ const Recipe = ({ recipe, onDelete }) => {
             <p>{recipe.ingredients || 'Unknown Ingredients'}</p>
             <p>{recipe.description || 'Uncategorized'}</p>
             
-            <button onClick={handleDelete}>Delete</button>
+            <button onClick={() => onUpdateRequest(recipe)}>Update</button>
+            <button onClick={() => onDelete(recipe._id)}>Delete</button>
         </div>
     );
 };
@@ -34,9 +31,11 @@ Recipe.propTypes = {
         image: PropTypes.string,
     }),
     onDelete: PropTypes.func.isRequired,
+    onUpdateRequest: PropTypes.func.isRequired
 };
 
 export default Recipe;
+
 
 
 

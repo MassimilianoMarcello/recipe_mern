@@ -40,20 +40,24 @@ const recipeControllers = {
     updateRecipe: async (req, res) => {
         const { id } = req.params;
         const { title, description, ingredients, image } = req.body;
+    
         try {
-            const updatedRecipe = await Recipe.updateOne(
-                { _id: id },
-                { $set: { title, description, ingredients, image } }
+            const updatedRecipe = await Recipe.findByIdAndUpdate(
+                id,
+                { title, description, ingredients, image },
+                { new: true } // restituisce il documento aggiornato
             );
+    
             if (!updatedRecipe) {
                 return res.status(404).json({ message: 'Recipe not found' });
             } else {
-                res.status(200).json({ message: 'Recipe updated successfully' });
+                res.status(200).json({ message: 'Recipe updated successfully', recipe: updatedRecipe });
             }
         } catch (err) {
             res.status(500).json({ message: err.message });
         }
     },
+    
     deleteRecipe: async (req, res) => {
         const { id } = req.params;
         try {
