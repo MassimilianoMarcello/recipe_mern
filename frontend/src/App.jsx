@@ -14,7 +14,7 @@ const App = () => {
     return (
         <Router>
             <div>
-                <Header title="Book store" />
+                <Header title="Recipes" />
                 <Navbar />
                 <Routes>
                     <Route path="/" element={<Recipes />} />
