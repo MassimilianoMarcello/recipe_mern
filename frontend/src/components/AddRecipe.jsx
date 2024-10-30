@@ -18,7 +18,7 @@ const AddRecipe = () => {
         if (title && ingredients && description && image) {
             try {
                 const res = await axios.post(
-                    'http://localhost:5004/api/recipes',
+                    '/api/recipes',
                     { title, ingredients, description, image },
                     { withCredentials: true }
                 );

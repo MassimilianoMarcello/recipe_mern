@@ -11,7 +11,7 @@ const Recipes = () => {
 
     const handleDeleteRecipe = async (id) => {
         try {
-            await axios.delete(`http://localhost:5004/api/recipes/${id}`);
+            await axios.delete(`/api/recipes/${id}`);
             setRecipes((prevRecipes) => prevRecipes.filter((recipe) => recipe._id !== id));
         } catch (error) {
             console.error('Error deleting recipe: ', error);
@@ -34,7 +34,7 @@ const Recipes = () => {
     useEffect(() => {
         const getRecipes = async () => {
             try {
-                const res = await axios.get('http://localhost:5004/api/recipes');
+                const res = await axios.get('/api/recipes');
                 if (res.status === 200 && Array.isArray(res.data)) {
                     setRecipes(res.data);
                 } else {

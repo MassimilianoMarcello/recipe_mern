@@ -17,7 +17,7 @@ const Register = () => {
 
         if (email && password && rePassword && isMatchPasswords) {
             const res = await axios.post(
-                'http://localhost:5004/api/register',
+                '/api/register',
                 {
                     email,
                     password,

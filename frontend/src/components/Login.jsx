@@ -15,7 +15,7 @@ const Login = () => {
         if (email && password) {
             try {
                 const res = await axios.post(
-                    'http://localhost:5004/api/login',
+                    '/api/login',
                     {
                         email,
                         password

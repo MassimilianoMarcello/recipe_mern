@@ -21,7 +21,7 @@ const UpdateRecipe = ({ recipe, onUpdate }) => {
 
     const handleUpdate = async () => {
         try {
-            const response = await axios.put(`http://localhost:5004/api/recipes/${recipe._id}`, {
+            const response = await axios.put(`/api/recipes/${recipe._id}`, {
                 title,
                 description,
                 ingredients,

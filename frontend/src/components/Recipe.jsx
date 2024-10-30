@@ -3,7 +3,7 @@ import './Recipe.css';
 
 const Recipe = ({ recipe, onDelete, onUpdateRequest }) => {
     if (!recipe) {
-        return null; // Ritorna null se il recipe è undefined
+        return null; // Return null if recipe is undefined
     }
 
     return (

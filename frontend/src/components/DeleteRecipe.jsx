@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const DeleteRecipe = ({ id, onDelete }) => {
     const handleDelete = async () => {
         try {
-            const res = await axios.delete(`http://localhost:5004/api/recipes/${id}`);
+            const res = await axios.delete(`/api/recipes/${id}`);
             if (res.status === 200) {
                 onDelete(id); // Aggiorna la lista delle ricette
                 alert('Recipe deleted successfully');
